@@ -3,5 +3,10 @@
   "item.firstmodneoforge.raw_bismuth": "Raw Bismuth",
 
   "block.firstmodneoforge.bismuth_block": "Block of Bismuth",
-  "block.firstmodneoforge.bismuth_ore": "Bismuth Ore"
+  "block.firstmodneoforge.bismuth_ore": "Bismuth Ore",
+  "block.firstmodneoforge.bismuth_deepslate_ore": "Deepslate Bismuth Ore",
+
+  "creativetab.firstmodneoforge.bismuth_items": "Bismuth Items",
+  "creativetab.firstmodneoforge.bismuth_blocks": "Bismuth Blocks",
+  "creativetab.firstmodneoforge.all_bismuth": "All Bismuth Stuff"
 }

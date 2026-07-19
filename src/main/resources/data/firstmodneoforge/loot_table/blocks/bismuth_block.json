@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "condition": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft.item",
+          "name": "firstmodneoforge:blocks/bismuth_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "firstmodneoforge:blocks/bismuth_block"
+}

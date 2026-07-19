@@ -1,0 +1,53 @@
+package net.cat756dog.firstmodneoforge.item;
+
+import net.cat756dog.firstmodneoforge.FirstMod;
+import net.cat756dog.firstmodneoforge.block.ModBlocks;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
+
+public class ModCreativeModeTabs {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, FirstMod.MOD_ID);
+
+    public static final Supplier<CreativeModeTab> BISMUTH_ITEMS_TAB = CREATIVE_MODE_TAB.register("bismuth_items_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BISMUTH.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "all_bismuth_tab"))
+                    .title(Component.translatable("creativetab.firstmodneoforge.bismuth_items"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.BISMUTH);
+                        output.accept(ModItems.RAW_BISMUTH);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> BISMUTH_BLOCK_TAB = CREATIVE_MODE_TAB.register("bismuth_blocks_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.BISMUTH_BLOCK))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "bismuth_items_tab"))
+                    .title(Component.translatable("creativetab.firstmodneoforge.bismuth_blocks"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.BISMUTH_BLOCK);
+                        output.accept(ModBlocks.BISMUTH_ORE);
+                        output.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> ALL_BISMUTH_TAB = CREATIVE_MODE_TAB.register("all_bismuth_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RAW_BISMUTH.get()))
+                    .title(Component.translatable("creativetab.firstmodneoforge.all_bismuth"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.BISMUTH);
+                        output.accept(ModItems.RAW_BISMUTH);
+                        output.accept(ModBlocks.BISMUTH_BLOCK);
+                        output.accept(ModBlocks.BISMUTH_ORE);
+                        output.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE);
+                    }).build());
+
+    public static void register(IEventBus eventBus) {
+        CREATIVE_MODE_TAB.register(eventBus);
+    }
+
+}
