@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft.item",
-          "name": "firstmodneoforge:blocks/bismuth_block"
+          "name": "firstmodneoforge:bismuth_block"
         }
       ],
       "rolls": 1.0

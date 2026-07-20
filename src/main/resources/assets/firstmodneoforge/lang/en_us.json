@@ -8,5 +8,7 @@
 
   "creativetab.firstmodneoforge.bismuth_items": "Bismuth Items",
   "creativetab.firstmodneoforge.bismuth_blocks": "Bismuth Blocks",
-  "creativetab.firstmodneoforge.all_bismuth": "All Bismuth Stuff"
+  "creativetab.firstmodneoforge.all_modded": "All Modded Stuff",
+
+  "item.firstmodneoforge.chisel": "Chisel"
 }
