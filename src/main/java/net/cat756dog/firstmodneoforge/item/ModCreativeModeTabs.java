@@ -16,6 +16,15 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, FirstMod.MOD_ID);
 
+    public static final Supplier<CreativeModeTab> OTHER_TAB = CREATIVE_MODE_TAB.register("other_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MAGIC_BLOCK))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "bismuth_blocks_tab"))
+                    .title(Component.translatable("creativetab.firstmodneoforge.other"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.MAGIC_BLOCK);
+                        output.accept(ModItems.CHISEL);
+                    }).build());
+
     public static final Supplier<CreativeModeTab> BISMUTH_ITEMS_TAB = CREATIVE_MODE_TAB.register("bismuth_items_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BISMUTH.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "all_modded_tab"))
