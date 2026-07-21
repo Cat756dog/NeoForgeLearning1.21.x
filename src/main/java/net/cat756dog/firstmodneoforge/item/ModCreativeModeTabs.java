@@ -54,7 +54,18 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BISMUTH_ORE);
                         output.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE);
                         output.accept(ModItems.CHISEL);
+                        output.accept(ModBlocks.MAGIC_BLOCK);
+                        output.accept(ModItems.RADISH);
                     }).build());
+
+    public static final Supplier<CreativeModeTab> FOOD_TAB = CREATIVE_MODE_TAB.register("food_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MAGIC_BLOCK))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "other_tab"))
+                    .title(Component.translatable("creativetab.firstmodneoforge.food"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.RADISH);
+                    }).build());
+
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
